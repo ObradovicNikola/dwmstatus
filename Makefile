@@ -2,17 +2,17 @@
 
 PREFIX = /usr/local
 
-output: dwmblocks.o
-	gcc dwmblocks.o -lX11 -o dwmblocks
-dwmblocks.o: dwmblocks.c config.h
-	gcc -c -lX11 dwmblocks.c
+output: dwmstatus.o
+	gcc dwmstatus.o -lX11 -o dwmstatus
+dwmstatus.o: dwmstatus.c config.h
+	gcc -c -lX11 dwmstatus.c
 clean:
-	rm -f *.o *.gch dwmblocks
+	rm -f *.o *.gch dwmstatus
 install: output
 	mkdir -p $(DESTDIR)$(PREFIX)/bin
-	cp -f dwmblocks $(DESTDIR)$(PREFIX)/bin
-	chmod 755 $(DESTDIR)$(PREFIX)/bin/dwmblocks
+	cp -f dwmstatus $(DESTDIR)$(PREFIX)/bin
+	chmod 755 $(DESTDIR)$(PREFIX)/bin/dwmstatus
 uninstall:
-	rm -f $(DESTDIR)$(PREFIX)/bin/dwmblocks
+	rm -f $(DESTDIR)$(PREFIX)/bin/dwmstatus
 
 .PHONY: clean install uninstall

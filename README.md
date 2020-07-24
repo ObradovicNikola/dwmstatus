@@ -15,15 +15,15 @@ that you can signal to it to update on a relevant event, rather than having it
 rerun idly.
 
 For example, the audio module has the update signal 10 by default.  Thus,
-running `pkill -RTMIN+10 dwmblocks` will update it.
+running `pkill -RTMIN+10 dwmstatus` will update it.
 
-You can also run `kill -44 $(pidof dwmblocks)` which will have the same effect,
+You can also run `kill -44 $(pidof dwmstatus)` which will have the same effect,
 but is faster.  Just add 34 to your typical signal number.
 
 My volume module *never* updates on its own, instead I have this command run
 along side my volume shortcuts in dwm to only update it when relevant.
 
-Note that if you signal an unexpected signal to dwmblocks, it will probably
+Note that if you signal an unexpected signal to dwmstatus, it will probably
 crash. So if you disable a module, remember to also disable any cronjobs or
 other scripts that might signal to that module.
 
